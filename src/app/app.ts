@@ -1,8 +1,8 @@
 import express, { Application, Request, Response } from "express";
 import cors from "cors";
-import { UserRoutes } from "./modules/user/user.router";
 import globalErrorHandler from "./middleware/globalErrorHandler";
 import notFoundRoute from "./middleware/notFoundRoute";
+import routes from "./routes";
 
 const app: Application = express();
 
@@ -11,7 +11,7 @@ app.use(express.json());
 app.use(cors());
 
 // api here
-app.use("/api/user", UserRoutes);
+app.use("/api", routes);
 
 // landing or testing route
 app.get("/", (_req: Request, res: Response) => {

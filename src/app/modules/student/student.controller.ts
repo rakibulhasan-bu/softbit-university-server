@@ -1,6 +1,6 @@
 import { NextFunction, Request, Response } from "express";
 import { StudentServices } from "./student.service";
-import sendResponse from "../../utils/sendRes";
+import sendResponse from "../../utils/sendResponse";
 
 const getSingleStudent = async (
   req: Request,
